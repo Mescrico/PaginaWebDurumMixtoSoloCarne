@@ -1,0 +1,85 @@
+.box {
+  background: #c0c0c0;
+  border: 3px outset #fff;
+}
+
+.box-title {
+  background: #000080;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+}
+
+.box-body {
+  padding: 8px;
+}
+
+.form-label {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.form-input {
+  width: 100%;
+  border: 2px inset #808080;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  padding: 2px 4px;
+  outline: none;
+  color: #000;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  background: #fffff0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.btn {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 10px;
+  border: 3px outset #fff;
+  background: #c0c0c0;
+  cursor: pointer;
+  color: #000;
+}
+
+.btn:hover {
+  background: #d4d0c8;
+}
+
+.btn:active {
+  border-style: inset;
+}
+
+.btn-blue {
+  background: #000080;
+  color: #fff;
+  border: 3px outset #0000bb;
+}
+
+.btn-blue:hover {
+  background: #0000aa;
+}
+
+.form-msg {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+}

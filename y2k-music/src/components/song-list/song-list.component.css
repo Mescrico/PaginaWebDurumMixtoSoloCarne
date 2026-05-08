@@ -1,0 +1,129 @@
+.box {
+  background: #c0c0c0;
+  border: 3px outset #fff;
+}
+
+.box-title {
+  background: #000080;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+}
+
+.box-body {
+  padding: 8px;
+}
+
+.search-row {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  flex: 1;
+  border: 2px inset #808080;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  padding: 2px 4px;
+  outline: none;
+  color: #000;
+}
+
+.form-input:focus {
+  background: #fffff0;
+}
+
+.btn {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 10px;
+  border: 3px outset #fff;
+  background: #c0c0c0;
+  cursor: pointer;
+  color: #000;
+}
+
+.btn:hover {
+  background: #d4d0c8;
+}
+
+.btn:active {
+  border-style: inset;
+}
+
+.btn-red {
+  background: #cc0000;
+  color: #fff;
+  border: 3px outset #ff4444;
+  font-size: 10px;
+  padding: 1px 5px;
+}
+
+.btn-red:hover {
+  background: #aa0000;
+}
+
+.list-scroll {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.songs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  background: #fff;
+  border: 2px inset #808080;
+  table-layout: fixed;
+}
+
+.songs-table th {
+  background: #000080;
+  color: #fff;
+  padding: 3px 6px;
+  text-align: left;
+  font-size: 11px;
+  border: 1px solid #000040;
+}
+
+.songs-table td {
+  padding: 3px 6px;
+  border-bottom: 1px solid #c0c0c0;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.songs-table tr:nth-child(even) td {
+  background: #e8e8f8;
+}
+
+.songs-table tr:hover td {
+  background: #ffffcc;
+}
+
+.col-num { width: 28px; }
+.col-action { width: 55px; }
+
+.num-cell {
+  color: #808080;
+  font-weight: bold;
+}
+
+.artist-cell {
+  color: #000080;
+}
+
+.empty-row td {
+  text-align: center;
+  color: #808080;
+  font-style: italic;
+  padding: 12px;
+}

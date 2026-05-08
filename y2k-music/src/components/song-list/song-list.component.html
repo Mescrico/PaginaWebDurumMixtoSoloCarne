@@ -1,0 +1,53 @@
+<div class="box">
+  <div class="box-title">&#127911; Lista de canciones</div>
+  <div class="box-body">
+
+    <div class="search-row">
+      <input
+        class="form-input"
+        type="text"
+        [value]="query()"
+        (input)="onSearch($any($event.target).value)"
+        placeholder="Buscar cancion o artista..."
+      />
+      <button class="btn" (click)="clearSearch()">X</button>
+    </div>
+
+    <div class="list-scroll">
+      <table class="songs-table">
+        <thead>
+          <tr>
+            <th class="col-num">#</th>
+            <th>Cancion</th>
+            <th>Artista</th>
+            <th class="col-action">Borrar</th>
+          </tr>
+        </thead>
+        <tbody>
+          @if (filteredSongs().length === 0) {
+            <tr class="empty-row">
+              <td colspan="4">
+                @if (query()) {
+                  No se encontraron resultados para "{{ query() }}"
+                } @else {
+                  No hay canciones todavia. Anade la primera!
+                }
+              </td>
+            </tr>
+          }
+          @for (song of filteredSongs(); track song.id; let i = $index) {
+            <tr>
+              <td class="num-cell">{{ i + 1 }}</td>
+              <td><b>{{ song.title }}</b></td>
+              <td class="artist-cell">{{ song.artist }}</td>
+              <td>
+                <button class="btn btn-red" (click)="delete(song.id)">Borrar</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

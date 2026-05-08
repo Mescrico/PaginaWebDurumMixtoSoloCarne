@@ -1,0 +1,34 @@
+.status-bar {
+  background: #c0c0c0;
+  border: 2px inset #808080;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  padding: 2px 6px;
+  color: #000;
+  margin-top: 6px;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.status-segment {
+  border-right: 1px solid #808080;
+  padding-right: 8px;
+}
+
+.status-segment:last-of-type {
+  border-right: none;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: #c0c0c0;
+}
+
+.heart {
+  color: #ff6666;
+}

@@ -1,0 +1,35 @@
+<div class="box">
+  <div class="box-title">&#9835; Anadir nueva cancion</div>
+  <div class="box-body">
+
+    <label class="form-label" for="inp-song">Nombre de la cancion:</label>
+    <input
+      class="form-input"
+      id="inp-song"
+      type="text"
+      [(ngModel)]="title"
+      placeholder="Ej: Teenage Dirtbag"
+      maxlength="80"
+      (keydown.enter)="artistInput.focus()"
+    />
+
+    <label class="form-label" for="inp-artist">Artista / Grupo:</label>
+    <input
+      class="form-input"
+      id="inp-artist"
+      #artistInput
+      type="text"
+      [(ngModel)]="artist"
+      placeholder="Ej: Wheatus"
+      maxlength="80"
+      (keydown.enter)="add()"
+    />
+
+    <div class="form-actions">
+      <button class="btn btn-blue" (click)="add()">Guardar</button>
+      <button class="btn" (click)="clear()">Limpiar</button>
+      <span class="form-msg" [style.color]="messageColor()">{{ message() }}</span>
+    </div>
+
+  </div>
+</div>
