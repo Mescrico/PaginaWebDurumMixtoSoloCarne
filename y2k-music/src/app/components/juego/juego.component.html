@@ -1,0 +1,32 @@
+<div class="game-box">
+  <div class="box-title">Buscaminas Retro</div>
+  <div class="box-body">
+    <div class="game-top">
+      <div class="status-box">Estado: {{ statusText }}</div>
+      <div class="info-box">Minas: {{ minesCount }} • Banderas: {{ flagsLeft }}</div>
+      <button class="btn-play" (click)="reset()">Reiniciar</button>
+    </div>
+
+    <div class="minesweeper-grid">
+      <ng-container *ngFor="let row of grid(); let rowIndex = index">
+        <button
+          *ngFor="let cell of row; let colIndex = index"
+          class="cell"
+          [class.revealed]="cell.revealed"
+          [class.mine]="cell.revealed && cell.hasMine"
+          [class.flagged]="cell.flagged"
+          (click)="revealCell(rowIndex, colIndex)"
+          (contextmenu)="toggleFlag(rowIndex, colIndex); $event.preventDefault();"
+        >
+          <span *ngIf="cell.revealed && cell.hasMine">💣</span>
+          <span *ngIf="cell.flagged && !cell.revealed">🚩</span>
+          <span *ngIf="cell.revealed && !cell.hasMine">
+            {{ cell.adjacent || '' }}
+          </span>
+        </button>
+      </ng-container>
+    </div>
+
+    <div class="hint-box">Haz clic izquierdo para descubrir y clic derecho para marcar.</div>
+  </div>
+</div>

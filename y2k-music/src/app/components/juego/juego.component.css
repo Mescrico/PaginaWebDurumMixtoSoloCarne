@@ -1,0 +1,96 @@
+.game-box {
+  background: #c0c0c0;
+  border: 3px outset #fff;
+  font-family: Arial, sans-serif;
+}
+
+.box-title {
+  background: #000080;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+}
+
+.box-body {
+  padding: 10px;
+}
+
+.game-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.status-box,
+.info-box {
+  background: #000080;
+  color: #fff;
+  border: 3px outset #2a47d3;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+.minesweeper-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 32px);
+  gap: 4px;
+  justify-content: center;
+}
+
+.cell {
+  width: 32px;
+  height: 32px;
+  background: #d4d0c8;
+  border: 3px outset #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.cell:hover {
+  filter: brightness(1.05);
+}
+
+.cell.revealed {
+  background: #f8f8f8;
+  border: 2px inset #808080;
+  cursor: default;
+}
+
+.cell.mine {
+  background: #b00000;
+  color: #fff;
+}
+
+.cell.flagged {
+  background: #ffff99;
+}
+
+.hint-box {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #000080;
+  text-align: center;
+}
+
+.btn-play {
+  margin-left: auto;
+  font-size: 11px;
+  padding: 4px 10px;
+  background: #27a745;
+  color: #fff;
+  border: 3px outset #52c26b;
+  cursor: pointer;
+}
+
+.btn-play:hover {
+  background: #1f8f3f;
+}
