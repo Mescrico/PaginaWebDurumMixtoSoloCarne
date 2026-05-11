@@ -5,7 +5,6 @@ import { SongFormComponent } from './components/song-form/song-form.component';
 import { SongListComponent } from './components/song-list/song-list.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthService } from './services/auth.service';
-import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +14,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     SidebarComponent,
     SongFormComponent,
     SongListComponent,
-    FooterComponent,
-    RouterOutlet,
-    RouterLink,
+    FooterComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

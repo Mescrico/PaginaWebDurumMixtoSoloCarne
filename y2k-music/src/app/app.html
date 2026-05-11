@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<div class="page" [class.unauthenticated]="!authService.isAuthenticated()">
+  <app-header />
+
+  <div class="layout">
+    <app-sidebar />
+
+    <div class="main-col">
+      <app-song-form />
+      <app-song-list />
+    </div>
+  </div>
+
+  <app-footer />
+</div>
