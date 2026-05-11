@@ -27,7 +27,7 @@
             <th class="col-num">#</th>
             <th>Cancion</th>
             <th>Artista</th>
-            <th class="col-action">Borrar</th>
+            <th class="col-action">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +45,16 @@
           @for (song of filteredSongs(); track song.id; let i = $index) {
             <tr>
               <td class="num-cell">{{ i + 1 }}</td>
-              <td><b>{{ song.title | primeraMayuscula }}</b></td>
+              <td>
+                <b>{{ song.title | primeraMayuscula }}</b>
+                <button
+                  class="btn btn-play"
+                  (click)="playPreview(song)"
+                  [disabled]="loadingPreviewId() === song.id"
+                >
+                  {{ nowPlayingId() === song.id ? 'Stop' : loadingPreviewId() === song.id ? '...' : 'Play' }}
+                </button>
+              </td>
               <td class="artist-cell">{{ song.artist | primeraMayuscula }}</td>
               <td>
                 <button class="btn btn-red" (click)="delete(song.id)" [disabled]="!isAuthenticated()">
@@ -56,6 +65,36 @@
           }
         </tbody>
       </table>
+    </div>
+
+    <div class="audio-controls" *ngIf="nowPlayingId() !== null || loadingPreviewId() !== null">
+      <div class="audio-controls-title">Control de audio</div>
+      <div class="progress-row">
+        <input
+          class="progress-slider"
+          type="range"
+          min="0"
+          [max]="duration() || 1"
+          [value]="currentTime()"
+          (input)="seek($event)"
+        />
+        <div class="time-labels">
+          <span>{{ currentTime() | number:'1.0-0' }}s</span>
+          <span>{{ duration() | number:'1.0-0' }}s</span>
+        </div>
+      </div>
+      <div class="volume-row">
+        <label>Volumen</label>
+        <input
+          class="volume-slider"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          [value]="volume()"
+          (input)="setVolume($event)"
+        />
+      </div>
     </div>
 
   </div>

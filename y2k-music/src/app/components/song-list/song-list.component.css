@@ -68,6 +68,19 @@
   background: #aa0000;
 }
 
+.btn-play {
+  margin-left: 8px;
+  font-size: 10px;
+  padding: 2px 8px;
+  background: #000080;
+  color: #fff;
+  border: 3px outset #0000bb;
+}
+
+.btn-play:hover {
+  background: #0000aa;
+}
+
 .list-scroll {
   max-height: 200px;
   overflow-y: auto;
@@ -126,4 +139,75 @@
   color: #808080;
   font-style: italic;
   padding: 12px;
+}
+
+.audio-controls {
+  margin-top: 12px;
+  padding: 8px;
+  border: 3px outset #fff;
+  background: #c0c0c0;
+}
+
+.audio-controls-title {
+  background: #000080;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+  margin: -8px -8px 10px;
+}
+
+.progress-row,
+.volume-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.progress-slider,
+.volume-slider {
+  flex: 1;
+  appearance: none;
+  height: 12px;
+  border-radius: 4px;
+  background: #fff;
+  border: 2px inset #808080;
+  outline: none;
+}
+
+.progress-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #000080;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.progress-slider::-moz-range-thumb,
+.volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #000080;
+  border: 2px solid #fff;
+}
+
+.time-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  font-size: 11px;
+  color: #000080;
+}
+
+.volume-row label {
+  width: 70px;
+  font-size: 11px;
+  color: #000080;
+  font-weight: bold;
 }
