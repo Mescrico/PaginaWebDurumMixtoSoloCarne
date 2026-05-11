@@ -9,9 +9,9 @@ export const authGuard = () => {
   if (authService.isAuthenticated()) {
     return true; // Si está logueado, lo deja pasar
   } else {
-    // Si no está logueado, le avisamos y lo mandamos al inicio
-    alert('¡Alto ahí! Debes iniciar sesión para ver la música.');
-    router.navigate(['/']); 
+    // Si no está logueado, lo mandamos al inicio sin usar alert en SSR
+    console.warn('Necesita iniciar sesión para ver esta sección.');
+    router.navigate(['/']);
     return false;
   }
 };

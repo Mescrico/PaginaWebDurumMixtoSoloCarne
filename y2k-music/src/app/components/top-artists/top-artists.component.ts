@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 interface TopArtist {
   name: string;
@@ -11,7 +11,7 @@ interface TopArtist {
 @Component({
   selector: 'app-top-artists',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './top-artists.component.html',
   styleUrl: './top-artists.component.css'
 })

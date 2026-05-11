@@ -1,10 +1,10 @@
 <div class="auth-bar">
-  <div class="auth-summary" *ngIf="isAuthenticated()">
-    <span class="welcome-text">Bienvenido, <b>{{ currentUser()?.username }}</b>!</span>
+  <div class="auth-summary" *ngIf="isAuthenticated">
+    <span class="welcome-text">Bienvenido, <b>{{ currentUser?.username }}</b>!</span>
     <button class="btn btn-small" (click)="logout()">Cerrar sesión</button>
   </div>
 
-  <div class="auth-panel" *ngIf="!isAuthenticated()">
+  <div class="auth-panel" *ngIf="!isAuthenticated">
     <div class="auth-tabs">
       <button
         class="btn"
