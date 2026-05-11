@@ -1,0 +1,49 @@
+<div class="page" [class.unauthenticated]="!authService.isAuthenticated()">
+  <app-header />
+
+  <div class="layout">
+    <app-sidebar />
+
+    <div class="main-col">
+
+      <div class="box">
+        <div class="box-title">NOVEDADES MUSICALES 2000</div>
+        <div class="box-body">
+          <p class="form-msg">Últimas noticias del mundo pop, rock y techno. ¡Directo desde el año 2000!</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title">🎸 Linkin Park prepara su debut</div>
+        <div class="box-body">
+            <p>La banda mezcla nu‑metal con electrónica y promete revolucionar el sonido del 2000.</p>
+            <span class="fecha">Publicado: 10/05/2000</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title">🎤 Eminem vuelve a la carga</div>
+        <div class="box-body">
+            <p>El rapero lanza un nuevo tema polémico que ya está generando debate en foros y chats MSN.</p>
+            <span class="fecha">Publicado: 09/05/2000</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title">🎤 Michael Jackson vuelve a los escenarios</div>
+        <div class="box-body">
+            <p>El Rey del Pop anuncia su regreso con actuaciones especiales y prepara nuevo material para el nuevo milenio.
+            </p>
+            <span class="fecha">Publicado: 08/05/2000</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title">🎤 Beyoncé destaca como futura estrella</div>
+        <div class="box-body">
+            <p>La cantante brilla en Destiny’s Child y comienza a perfilarse como una de las artistas más prometedoras del
+                pop.</p>
+            <span class="fecha">Publicado: 07/05/2000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer />
+</div>
