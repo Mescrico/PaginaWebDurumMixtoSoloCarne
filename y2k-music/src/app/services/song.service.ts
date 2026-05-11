@@ -16,7 +16,15 @@ export class SongService {
     new Set(this.songs().map(s => s.artist.toLowerCase())).size
   );
 
+  private get storageAvailable(): boolean {
+    return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
+  }
+
   private load(): Song[] {
+    if (!this.storageAvailable) {
+      return [];
+    }
+
     try {
       return JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
     } catch {
@@ -25,6 +33,10 @@ export class SongService {
   }
 
   private save() {
+    if (!this.storageAvailable) {
+      return;
+    }
+
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.songs()));
   }
 

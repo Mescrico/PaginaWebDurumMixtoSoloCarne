@@ -15,6 +15,10 @@ export class HeaderComponent implements OnInit {
   constructor(private songService: SongService) {}
 
   ngOnInit() {
+    if (typeof window === 'undefined' || typeof localStorage === 'undefined') {
+      return;
+    }
+
     const count = parseInt(localStorage.getItem('visit_count') || '1337');
     const next = count + 1;
     localStorage.setItem('visit_count', String(next));

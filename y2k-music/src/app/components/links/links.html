@@ -1,9 +1,13 @@
 <div class="box">
   <div class="box-title">&#128279; Mis Links</div>
   <div class="box-body nav-body">
-    <span class="nav-link small">Myspace</span>
-    <span class="nav-link small">Fotolog</span>
-    <span class="nav-link small">MSN Groups</span>
-    <span class="nav-link small">Napster</span>
+    <a
+      *ngFor="let link of links"
+      class="nav-link small"
+      href="{{ link.href }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      >{{ link.label }}</a
+    >
   </div>
 </div>
