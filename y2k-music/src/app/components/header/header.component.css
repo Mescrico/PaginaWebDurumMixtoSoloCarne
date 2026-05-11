@@ -12,6 +12,135 @@
   font-family: Arial, sans-serif;
 }
 
+.auth-bar {
+  background: #c0c0c0;
+  border: 3px outset #fff;
+  padding: 8px;
+  margin-bottom: 6px;
+}
+
+.auth-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #000080;
+}
+
+.welcome-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.auth-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: Arial, sans-serif;
+}
+
+.auth-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.auth-tabs .btn {
+  min-width: 120px;
+}
+
+.auth-tabs .active {
+  background: #000080;
+  color: #fff;
+  border: 3px inset #0000bb;
+}
+
+.auth-fields {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  align-items: end;
+}
+
+.auth-fields input {
+  width: 100%;
+  border: 2px inset #808080;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  padding: 2px 4px;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.auth-fields input:focus {
+  background: #fffff0;
+  outline: none;
+}
+
+.auth-submit {
+  min-width: 120px;
+}
+
+.auth-message {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  min-height: 16px;
+}
+
+.auth-note {
+  background: #ffffcc;
+  border: 1px solid #808080;
+  padding: 4px 6px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #000080;
+}
+
+.btn {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 10px;
+  border: 3px outset #fff;
+  background: #c0c0c0;
+  cursor: pointer;
+  color: #000;
+}
+
+.btn:hover {
+  background: #d4d0c8;
+}
+
+.btn:active {
+  border-style: inset;
+}
+
+.btn-blue {
+  background: #000080;
+  color: #fff;
+  border: 3px outset #0000bb;
+}
+
+.btn-blue:hover {
+  background: #0000aa;
+}
+
+.btn-small {
+  padding: 2px 8px;
+  font-size: 10px;
+}
+
+.btn-small:hover {
+  background: #d4d0c8;
+}
+
+
 .main-title-box {
   background: #c0c0c0;
   border: 3px outset #fff;

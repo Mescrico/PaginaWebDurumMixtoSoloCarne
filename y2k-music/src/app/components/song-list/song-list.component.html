@@ -13,6 +13,13 @@
       <button class="btn" (click)="clearSearch()">X</button>
     </div>
 
+    <div class="auth-note" *ngIf="!isAuthenticated()">
+      Inicia sesión para poder borrar canciones.
+    </div>
+    <div class="status-msg" *ngIf="statusMessage()" [style.color]="statusColor()">
+      {{ statusMessage() }}
+    </div>
+
     <div class="list-scroll">
       <table class="songs-table">
         <thead>
@@ -41,7 +48,9 @@
               <td><b>{{ song.title }}</b></td>
               <td class="artist-cell">{{ song.artist }}</td>
               <td>
-                <button class="btn btn-red" (click)="delete(song.id)">Borrar</button>
+                <button class="btn btn-red" (click)="delete(song.id)" [disabled]="!isAuthenticated()">
+                  Borrar
+                </button>
               </td>
             </tr>
           }

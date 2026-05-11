@@ -1,3 +1,58 @@
+<div class="auth-bar">
+  <div class="auth-summary" *ngIf="isAuthenticated()">
+    <span class="welcome-text">Bienvenido, <b>{{ currentUser()?.username }}</b>!</span>
+    <button class="btn btn-small" (click)="logout()">Cerrar sesión</button>
+  </div>
+
+  <div class="auth-panel" *ngIf="!isAuthenticated()">
+    <div class="auth-tabs">
+      <button
+        class="btn"
+        [class.active]="authMode() === 'login'"
+        (click)="switchMode('login')"
+      >
+        Iniciar sesión
+      </button>
+      <button
+        class="btn"
+        [class.active]="authMode() === 'register'"
+        (click)="switchMode('register')"
+      >
+        Registrarse
+      </button>
+    </div>
+
+    <div class="auth-fields">
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Usuario"
+        [(ngModel)]="username"
+      />
+      <input
+        class="form-input"
+        type="password"
+        placeholder="Contraseña"
+        [(ngModel)]="password"
+      />
+      <input
+        *ngIf="authMode() === 'register'"
+        class="form-input"
+        type="password"
+        placeholder="Repite la contraseña"
+        [(ngModel)]="confirmPassword"
+      />
+      <button class="btn btn-blue auth-submit" (click)="submitAuth()">
+        {{ authMode() === 'login' ? 'Entrar' : 'Crear cuenta' }}
+      </button>
+    </div>
+
+    <div class="auth-message" [style.color]="authMessageColor()">
+      {{ authMessage() }}
+    </div>
+  </div>
+</div>
+
 <div class="top-banner">
   <marquee scrollamount="3">
     *** BIENVENIDO A MI PAGINA DE MUSICA *** ACTUALIZADO HOY *** MUSICA DEL 2000 *** TUS CANCIONES FAVORITAS ***

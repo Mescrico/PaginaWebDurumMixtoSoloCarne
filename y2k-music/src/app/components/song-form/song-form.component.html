@@ -2,6 +2,10 @@
   <div class="box-title">&#9835; Anadir nueva cancion</div>
   <div class="box-body">
 
+    <div class="auth-note" *ngIf="!isAuthenticated()">
+      Debes registrarte o iniciar sesión para poder añadir canciones.
+    </div>
+
     <label class="form-label" for="inp-song">Nombre de la cancion:</label>
     <input
       class="form-input"
@@ -10,6 +14,7 @@
       [(ngModel)]="title"
       placeholder="Ej: Teenage Dirtbag"
       maxlength="80"
+      [disabled]="!isAuthenticated()"
       (keydown.enter)="artistInput.focus()"
     />
 
@@ -22,11 +27,14 @@
       [(ngModel)]="artist"
       placeholder="Ej: Wheatus"
       maxlength="80"
+      [disabled]="!isAuthenticated()"
       (keydown.enter)="add()"
     />
 
     <div class="form-actions">
-      <button class="btn btn-blue" (click)="add()">Guardar</button>
+      <button class="btn btn-blue" (click)="add()" [disabled]="!isAuthenticated()">
+        Guardar
+      </button>
       <button class="btn" (click)="clear()">Limpiar</button>
       <span class="form-msg" [style.color]="messageColor()">{{ message() }}</span>
     </div>
