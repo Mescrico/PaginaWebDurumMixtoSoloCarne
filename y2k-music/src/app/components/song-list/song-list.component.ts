@@ -2,12 +2,8 @@ import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SongService, Song } from '../../services/song.service';
-<<<<<<< HEAD
 import { AuthService } from '../../services/auth.service';
-=======
 import { PrimeraMayusculaPipe } from '../../pipes/primera-mayuscula-pipe';
-
->>>>>>> origin/rama-mario
 
 @Component({
   selector: 'app-song-list',
