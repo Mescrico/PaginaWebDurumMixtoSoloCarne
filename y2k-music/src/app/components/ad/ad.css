@@ -1,0 +1,30 @@
+.ad-box {
+  background: #ffff99;
+  border: 2px solid #ff6600;
+  padding: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  text-align: center;
+}
+
+.ad-title {
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.ad-text {
+  color: #000;
+  margin-top: 2px;
+}
+
+.ad-blink {
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
